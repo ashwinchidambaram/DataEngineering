@@ -1,10 +1,10 @@
 # DROP TABLES
 
-songplay_table_drop = cur.execute("DROP table songplays")
-user_table_drop = cur.execute("DROP table users")
-song_table_drop = cur.execute("DROP table songs")
-artist_table_drop = cur.execute("DROP table artists")
-time_table_drop = cur.execute("DROP table time")
+songplay_table_drop = "DROP table songplays"
+user_table_drop = "DROP table users"
+song_table_drop = "DROP table songs"
+artist_table_drop = "DROP table artists"
+time_table_drop = "DROP table time"
 
 # CREATE TABLES
 
