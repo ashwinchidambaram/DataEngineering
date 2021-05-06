@@ -52,7 +52,6 @@ Together this results in 4 dimension tables, and 1 fact table.
     - [4] - artists
     - [5] - time
 
----
 ***Entity-Relationship Diagram for Sparkify***
 ![ER Diagram for Database](sparkifydb_erd.png)
 ---
