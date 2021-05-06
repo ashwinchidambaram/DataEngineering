@@ -52,6 +52,8 @@ Together this results in 4 dimension tables, and 1 fact table.
     - [4] - artists
     - [5] - time
 
+![ER Diagram for Database](sparkifydb_erd.png)
+
 By creating an ETL (Extract, Transformm, Load), I was able to pull data from the JSON files stored off within the Sparkify directory, and transform that data into something that could be loaded into the database schema I built. The ETL process first reads data from the songs directory, and after conversion, inserts it into the relevant fields within the *songs* and *artists* tables. Afterwards, it reads data from the log data of users, and similarly converts the data to be loaded into the relvant tbales. The time data is first extracted from the user logs for each user, and is converted into a readable format since it is stored as one long numeric string at present. After conversion, this data is then loaded into the *time* table, and the remaining data is grabbed to be formatted and inserted into the *users* table. After the 4 dimension tables are loaded with their data, we take the data regarding to when a song was played and aggregate it with data from our dimennsion tables and load it into the *songplays* table.
 
 -----------------------------------------

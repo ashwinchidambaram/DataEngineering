@@ -1,7 +1,10 @@
+# Import postgres library
 import psycopg2
+
+# Call files that will be referenced within this script
 from sql_queries import create_table_queries, drop_table_queries
 
-
+# Create Postgres database
 def create_database():
     """
     - Creates and connects to the sparkifydb

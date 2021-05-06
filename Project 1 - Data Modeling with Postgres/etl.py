@@ -4,8 +4,21 @@ import psycopg2
 import pandas as pd
 from sql_queries import *
 
-
 def process_song_file(cur, filepath):
+    """
+    Function Purpose: Open and process data from song data file to insert into {songs, artists} table
+
+    Inputs:
+        - filepath: the filepath where the JSON song data file is stored
+        - cur: cursor
+
+    Outputs:
+        - 'song_data': Insert [song_id, title, artist_id, year, duration]
+                    ==> into songs table
+        - 'artist_data': Insert [artist_id, name, location, latitude, longitude]
+                    ==> into artists table
+    """
+
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -19,12 +32,29 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    Function Purpose: Open and process data from log data file to insert into {time, users, songplays} table
+
+    Inputs:
+        - filepath: the filepath where the JSON log data file is stored
+        - cur: cursor
+
+    Outputs:
+        - time row: Insert [start_time, hour, day, week, month, year, weekday]
+                    ==> into time table
+        - user row: Insert [user_id, first_name, last_name, gender, level]
+                    ==> into artists table
+        - 'songplay_data': Insert [start_time, user_id, level, song_id, artist_id, session_id, location, user_agent]
+                    ==> into songplays table
+    """
+
     # open log file
     df = pd.read_json(filepath, lines=True)
 
     # filter by NextSong action
     df = df[df['page'] == 'NextSong']
 
+    ####### time table insert #####################
     # convert timestamp column to datetime
     t = df['ts']
 
@@ -43,6 +73,7 @@ def process_log_file(cur, filepath):
     for i, row in time_df.iterrows():
         cur.execute(time_table_insert, list(row))
 
+    ####### user table insert #####################
     # load user table
     user_df = df[['userId', 'firstName', 'lastName', 'gender', 'level']]
 
@@ -50,6 +81,7 @@ def process_log_file(cur, filepath):
     for i, row in user_df.iterrows():
         cur.execute(user_table_insert, row)
 
+    ####### songplays table insert ################
     # insert songplay records
     for index, row in df.iterrows():
 

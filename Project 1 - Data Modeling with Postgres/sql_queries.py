@@ -12,7 +12,7 @@ songplay_table_create = ("""
 
     CREATE TABLE IF NOT EXISTS songplays(
         songplay_id SERIAL PRIMARY KEY,
-        start_time timestamp,
+        start_time timestamp NOT NULL,
         user_id varchar NOT NULL,
         level varchar,
         song_id varchar,
@@ -93,7 +93,7 @@ user_table_insert = ("""
         level)
 
     VALUES(%s, %s, %s, %s, %s)
-    ON CONFLICT DO NOTHING
+    ON CONFLICT (user_id) DO UPDATE SET level=EXCLUDED.level
 
 """)
 
