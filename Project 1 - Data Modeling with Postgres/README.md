@@ -64,7 +64,7 @@ By creating an ETL (Extract, Transformm, Load), I was able to pull data from the
 >> 5 rows affected.
 >>> -      song_id        |      artist_id
 >>>
->>> -      SOMZWCG12A8C13C480  | ARD7TVE1187B99BFB1
+>>>       SOMZWCG12A8C13C480  | ARD7TVE1187B99BFB1
 >>> -      SOUDSGM12AC9618304  | ARNTLGG11E2835DDB9
 >>> -      SOIAZJW12AB01853F1  | AR8ZCNI1187B9A069B
 >>> -      SOHKNRJ12A6701D1F8  | AR10USD1187B99F3F1
