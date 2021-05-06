@@ -62,13 +62,13 @@ By creating an ETL (Extract, Transformm, Load), I was able to pull data from the
 
 > SELECT songs.song_id, songs.artist_id FROM songs JOIN artists ON songs.artist_id = artists.artist_id WHERE song_id is not NULL AND artists.artist_id is not NULL LIMIT 5
 >> 5 rows affected.
->>> -      song_id        |      artist_id
+>>>            song_id        |      artist_id
 >>>
 >>>       SOMZWCG12A8C13C480  | ARD7TVE1187B99BFB1
 >>>       SOUDSGM12AC9618304  | ARNTLGG11E2835DDB9
->>> -      SOIAZJW12AB01853F1  | AR8ZCNI1187B9A069B
->>> -      SOHKNRJ12A6701D1F8  | AR10USD1187B99F3F1
->>> -      SOCIWDW12A8C13D406  | ARMJAGH1187FB546F3
+>>>       SOIAZJW12AB01853F1  | AR8ZCNI1187B9A069B
+>>>       SOHKNRJ12A6701D1F8  | AR10USD1187B99F3F1
+>>>       SOCIWDW12A8C13D406  | ARMJAGH1187FB546F3
 
 
 > SELECT songs.song_id, songs.artist_id FROM songs JOIN artists ON songs.artist_id = artists.artist_id WHERE song_id is not NULL AND artists.artist_id is not NULL LIMIT 5
