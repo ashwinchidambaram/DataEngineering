@@ -22,6 +22,11 @@
   - **etl.py**
     - Reads & processes files from [song_data, log_data] and loads the data into our tables
 
+##### Other Files
+
+  - **ERdiagram.py**
+    - Create database schema and save as .png file (*sparkifydb_erd.png*)
+
 -----------------------------------------
 
 #### **About Project**
