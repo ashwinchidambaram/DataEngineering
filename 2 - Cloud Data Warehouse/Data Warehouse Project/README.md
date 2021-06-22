@@ -11,18 +11,25 @@ In this project, you'll apply what you've learned on data warehouses and AWS to 
 ## Project Datasets
 The datasets that we will be using for Sparkify reside in S3.
 
-  - Song Data Path - [s3://udacity-dend/song_data]
+  - Song Dataset Path - [s3://udacity-dend/song_data]
     - Each song is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.
 
-      - song_data/A/B/C/TRABCEI128F424C983.json
-      - song_data/A/A/B/TRAABJL12903CDCF1A.json
+      - *song_data/A/B/C/TRABCEI128F424C983.json*
+      - *song_data/A/A/B/TRAABJL12903CDCF1A.json*
 
     - The song file (*TRAABJL12903CDCF1A.json*) looks like:
       > {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
 
-  - Log Data Path - [s3://udacity-dend/log_data]
+  - Log Dataset Path - [s3://udacity-dend/log_data]
+    - Contains simulated app activity logs based on above data. The log files in the dataset are partitioned by year and month. For example, here are filepaths to two files in the dataset:
 
+      - *log_data/2018/11/2018-11-12-events.json*
+      - *log_data/2018/11/2018-11-13-events.json*
 
-  - Log Data JSON Path - [s3://udacity-dend/log_json_path.json]
+    - The log file (*2018-11-12-events.json*) looks like:
+
+      ![](https://video.udacity-data.com/topher/2019/February/5c6c3ce5_log-data/log-data.png)
+
+  - Log Dataset JSON Path - [s3://udacity-dend/log_json_path.json]
 
 Song Datasets
