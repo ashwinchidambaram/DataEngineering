@@ -16,6 +16,7 @@ The datasets that we will be using for Sparkify reside in S3.
     - Each song is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.
 
     > song_data/A/B/C/TRABCEI128F424C983.json
+    >
     > song_data/A/A/B/TRAABJL12903CDCF1A.json
 
   - Log Data Path - [s3://udacity-dend/log_data]
