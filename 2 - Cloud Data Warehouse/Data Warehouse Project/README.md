@@ -77,3 +77,6 @@ The datasets that we will be using for Sparkify reside in S3.
     2. Following which, I will load data from the staging tables to the analytics tables in Redshift.
 
 # **Project Discussion**
+1. Discuss the purpose of this database in context of the startup, Sparkify, and their analytical goals.
+2. State and justify your database schema design and ETL pipeline.
+3. Provide example queries and results for song play analysis.
