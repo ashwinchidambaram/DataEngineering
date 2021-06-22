@@ -1,3 +1,18 @@
+# Data Warehouse - Sparkify
+## *Author: Ashwin Chidambaram*
+
+### **Files Included:**
+- *create_table.py*
+  - Where I will create the fact and dimension tables for the star schema in Redshift.
+- *etl.py*
+  - Where I will load data from S3 into staging tables on Redshift and then process that data into my analytics tables on Redshift.
+- *sql_queries.py*
+  -  Where I will define the SQL statements, which will be imported into the two other files above.
+- *README.md*
+  - Where I will discuss the contents of this project, my process to tackle this project, and the decisions I made for the ETL pipeline.
+
+-------------------------------------------------------------------------------
+
 # Introduction
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
@@ -49,3 +64,14 @@ The datasets that we will be using for Sparkify reside in S3.
 
   1. **time** - timestamps of records in **songplays** broken down into specific units
       > *start_time, hour, day, week, month, year, weekday*
+
+# Project Process
+1. Create Table Schemas
+  1.  First, I will be designing the schemas for both the fact and dimension tables according to the specifications provided for this project.
+  2. Next, I will write CREATE statements for each of the tables within the file *sql_queries.py*.
+  3. After that, I will write the logic required to connect to the database within *create_tables.py* and include logic to create all of Sparkify's tables using the queries I wrote in  *sql_queries.py*.
+  4. Following that, I will create the IAM role that has read access to S3 and store the credentials to a secure file to be called within *create_tables.py*.
+
+2. Build ETL Pipeline
+  1. First, I will implement the logic to load data from S3 to staging tables within Redshift.
+  2. Following which, I will load data from the staging tables to the analytics tables in Redshift. 
