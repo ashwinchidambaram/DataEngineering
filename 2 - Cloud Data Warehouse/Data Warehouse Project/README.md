@@ -74,4 +74,4 @@ The datasets that we will be using for Sparkify reside in S3.
 
 2. Build ETL Pipeline
   1. First, I will implement the logic to load data from S3 to staging tables within Redshift.
-  2. Following which, I will load data from the staging tables to the analytics tables in Redshift. 
+  2. Following which, I will load data from the staging tables to the analytics tables in Redshift.
