@@ -1,4 +1,4 @@
-# Data Warehouse - Sparkify
+# **Data Warehouse - Sparkify**
 ## *Author: Ashwin Chidambaram*
 
 ### **Files Included:**
@@ -13,15 +13,15 @@
 
 -------------------------------------------------------------------------------
 
-# Introduction
+# **Introduction**
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
 As their data engineer, you are tasked with building an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights in what songs their users are listening to. You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.
 
-# Project Description
+# **Project Description**
 In this project, you'll apply what you've learned on data warehouses and AWS to build an ETL pipeline for a database hosted on Redshift. To complete the project, you will need to load data from S3 to staging tables on Redshift and execute SQL statements that create the analytics tables from these staging tables.
 
-# Project Information
+# **Project Information**
 
 ## Project Datasets
 The datasets that we will be using for Sparkify reside in S3.
@@ -52,24 +52,20 @@ The datasets that we will be using for Sparkify reside in S3.
   1. **songplays** -  records in event data associated with song plays i.e. records with page *NextSong*
       > *songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent*
 
-
 - Dimension Tables:
   1. **users** - users in the app
       > *user_id, first_name, last_name, gender, level*
 
-
   1. **songs** - songs in music database
       > *song_id, title, artist_id, year, duration*
-
 
   1. **artists** - artists in music database
       > *artist_id, name, location, latitude, longitude*
 
-
   1. **time** - timestamps of records in **songplays** broken down into specific units
       > *start_time, hour, day, week, month, year, weekday*
 
-# Project Process
+# **Project Process**
 1. Create Table Schemas
     1.  First, I will be designing the schemas for both the fact and dimension tables according to the specifications provided for this project.
     2. Next, I will write CREATE statements for each of the tables within the file *sql_queries.py*.
@@ -79,3 +75,5 @@ The datasets that we will be using for Sparkify reside in S3.
 2. Build ETL Pipeline
     1. First, I will implement the logic to load data from S3 to staging tables within Redshift.
     2. Following which, I will load data from the staging tables to the analytics tables in Redshift.
+
+# **Project Discussion**
