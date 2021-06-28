@@ -87,11 +87,18 @@ The datasets that we will be using for Sparkify reside in S3.
 
 
 # **Project Discussion**
-### 1. Purpose of Database within context Sparkify, and their Analytical Goals:
-1. Discuss the purpose of this database in context of the startup, Sparkify, and their analytical goals.
+### 1. Purpose of Database within Context of Sparkify, and their Analytical Goals:
+
+The fictional music streaming platform Sparkify is constantly collecting large quantities of data from their users however have no analytical capabilities since the data is simply stored off in JSON files that can not be easily accessed or queried. By creating this database, it allows Sparkify to have easy access to all their data and will allow them to use it for any of their business needs.
+
+As per the client's request we are using AWS to store their raw data in S3 buckets and warehouse it in Redshift. This ensures data availability across most geographic regions and none of the expensive costs associated with upkeep of local, on-premise servers.
+
+Their analytic goals are not defined, but using the tables created, they will be easily query the data required to answer any of their business needs.
 
 ### 2. Justification of Database Schema Design and ETL Pipeline:
 2. State and justify your database schema design and ETL pipeline.
+
+
 
 ### 3. Example Queries and Results:
 3. Provide example queries and results for song play analysis.
@@ -138,49 +145,3 @@ The datasets that we will be using for Sparkify reside in S3.
 
         ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/time_queryresults.png)
         ![]()
-
-
-
-## OTHER STUFF ##################
-Staging tables:
-- Staging tables are tables containing your business data in some form or other and helps in preparing your business data, usually taken from some business application. They are temporary table containing the business data.
-
-- Staging tables act a reservoir where the data is stored and after further processing it is moved to fact and dimension tables
-
-- Most traditional ETL processes perform their loads using three distinct and serial processes: extraction, followed by transformation, and finally a load to the destination. However, for some large or complex loads, using ETL staging tables can make for better performance and less complexity.
-
-- Staging tables are normally considered volatile tables, meaning that they are emptied and reloaded each time without persisting the results from one execution to the next. Staging tables should be used only for interim results and not for permanent storage.
-
-- This load design pattern has more steps than the traditional ETL process, but it also brings additional flexibility as well. By loading the data first into staging tables, you’ll be able to use the database engine for things that it already does well. For example, joining two sets of data together for validation or lookup purposes can be done in most every ETL tool, but this is the type of task that the database engine does exceptionally well.
-
-====================
-
-- PROJECT: In this project and as part of the specification, we should consider using a staging table on the destination database as a means for processing interim data results.
-
-- PROJECT
-1.) Delete existing data in the staging table(s)
-2.) Extract the data from the source
-3.) Load this source data into the staging table(s)
-4.) Perform relational updates (SQL) to cleanse or apply business rules to the data, repeating this transformation stage as necessary
-5.) Load the transformed data from the staging table(s) into the final destination table(s)
-
-- You may also utilize JOIN statements on both staging tables to insert data into the songplays table, by using staging_events and staging_songs
-
-  FROM staging_events
-  JOIN  staging_songs
-  ON
-
-- So, In sqlqueries.py, you need to:
-
-1. Define the tables for staging tables(2 tables, staging_events_table,staging_songs_table)
-2. Define the start schema tables, songsplay(Fact able) and time, artists, users, songs(dimension tables)
-3. Use copy statement to copy the log_data and song_data files to your redshift staging tables you created above.
-4. Once the data is loaded in the staging tables, use the staging tables to load the data in fact and dimension tables, (project 1 as a reference)
-
-
-
-
-
-https://knowledge.udacity.com/questions/505535
-https://knowledge.udacity.com/questions/148404
-https://knowledge.udacity.com/questions/400479
