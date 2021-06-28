@@ -110,9 +110,9 @@ To have a step-by-step breakdown, please refer to the **How to Run Scripts & Ove
 ### 3. Example Queries and Results:
 The following are the results of test queries to ensure that data has been successfully loaded to our 7 tables.
 
-- Check [**staging_events**] table
-  > QUERY:
-  >> *SELECT \* FROM staging_events LIMIT 5*
+  1.  Check [**staging_events**] table
+      > QUERY:
+      >> *SELECT \* FROM staging_events LIMIT 5*
 
   ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/staging_events_queryresults.png)
 
