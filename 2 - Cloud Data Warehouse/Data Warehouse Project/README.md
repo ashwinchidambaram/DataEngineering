@@ -87,39 +87,56 @@ The datasets that we will be using for Sparkify reside in S3.
 
 
 # **Project Discussion**
+### 1. Purpose of Database within context Sparkify, and their Analytical Goals:
 1. Discuss the purpose of this database in context of the startup, Sparkify, and their analytical goals.
+
+### 2. Justification of Database Schema Design and ETL Pipeline:
 2. State and justify your database schema design and ETL pipeline.
+
+### 3. Example Queries and Results:
 3. Provide example queries and results for song play analysis.
 
     1. Check [**staging_events**] table
         > QUERY:
-        >
         >> *SELECT \* FROM staging_events LIMIT 5*
+
+        ![](Data Warehouse Project/Query_Results/staging_events_queryresults.png)
 
     2. Check [**staging_songs**] table
         > QUERY:
-        >
         >> *SELECT \* FROM staging_songs LIMIT 5*
+
+        ![](/assets/images/philly-magic-gardens.jpg)
 
     3. Check [**songplay**] table
         > QUERY:
         >> *SELECT \* FROM songplay LIMIT 5*
 
+        ![](/assets/images/philly-magic-gardens.jpg)
+
     4. Check [**users**] table
         > QUERY:
         >> *SELECT \* FROM users LIMIT 5*
+
+        ![](/assets/images/philly-magic-gardens.jpg)
 
     5. Check [**songs**] table
         > QUERY:
         >> *SELECT \* FROM songs LIMIT 5*
 
+        ![](/assets/images/philly-magic-gardens.jpg)
+
     6. Check [**artist**] table
         > QUERY:
         >> *SELECT \* FROM artist LIMIT 5*
 
+        ![](/assets/images/philly-magic-gardens.jpg)
+
     7. Check [**time**] table
         > QUERY:
         >> *SELECT \* FROM time LIMIT 5*
+
+        ![](/assets/images/philly-magic-gardens.jpg)
 
 
 
