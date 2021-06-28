@@ -110,44 +110,44 @@ To have a step-by-step breakdown, please refer to the **How to Run Scripts & Ove
 ### 3. Example Queries and Results:
 The following are the results of test queries to ensure that data has been successfully loaded to our 7 tables.
 
-  1.  Check [**staging_events**] table
-      > QUERY:
-      >> *SELECT \* FROM staging_events LIMIT 5*
+- Check [**staging_events**] table
+  > QUERY:
+  >> *SELECT \* FROM staging_events LIMIT 5*
 
   ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/staging_events_queryresults.png)
 
-    2. Check [**staging_songs**] table
-        > QUERY:
-        >> *SELECT \* FROM staging_songs LIMIT 5*
+- Check [**staging_songs**] table
+  > QUERY:
+  >> *SELECT \* FROM staging_songs LIMIT 5*
 
-        ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/staging_songs_queryresults.png)
+  ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/staging_songs_queryresults.png)
 
-    3. Check [**songplay**] table
-        > QUERY:
-        >> *SELECT \* FROM songplay LIMIT 5*
+- Check [**songplay**] table
+  > QUERY:
+  >> *SELECT \* FROM songplay LIMIT 5*
 
-        ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/songplay_queryresults.png)
+  ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/songplay_queryresults.png)
 
-    4. Check [**users**] table
-        > QUERY:
-        >> *SELECT \* FROM users LIMIT 5*
+- Check [**users**] table
+  > QUERY:
+  >> *SELECT \* FROM users LIMIT 5*
 
-        ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/user_queryresults.png)
+  ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/user_queryresults.png)
 
-    5. Check [**songs**] table
-        > QUERY:
-        >> *SELECT \* FROM songs LIMIT 5*
+- Check [**songs**] table
+  > QUERY:
+  >> *SELECT \* FROM songs LIMIT 5*
 
-        ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/song_queryresults.png)
+  ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/song_queryresults.png)
 
-    6. Check [**artist**] table
-        > QUERY:
-        >> *SELECT \* FROM artist LIMIT 5*
+- Check [**artist**] table
+  > QUERY:
+  >> *SELECT \* FROM artist LIMIT 5*
 
-        ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/artist_queryresults.png)
+  ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/artist_queryresults.png)
 
-    7. Check [**time**] table
-        > QUERY:
-        >> *SELECT \* FROM time LIMIT 5*
+- Check [**time**] table
+  > QUERY:
+  >> *SELECT \* FROM time LIMIT 5*
 
-        ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/time_queryresults.png)
+  ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/time_queryresults.png)
