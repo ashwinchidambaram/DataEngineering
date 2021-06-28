@@ -108,8 +108,7 @@ The datasets that we will be using for Sparkify reside in S3.
     3. Check [**staging_events**] table
         > QUERY:
         >
-        > *SELECT \* FROM staging_events*
-        > *LIMIT 5*
+        >> *SELECT \* FROM staging_events LIMIT 5*
 
     4. Check [**staging_events**] table
         > QUERY:
