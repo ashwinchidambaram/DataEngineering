@@ -97,10 +97,10 @@ Their analytic goals are not defined, but using the tables created, they will be
 
 ### 2. Database Schema Design and ETL Pipeline:
 
-##### Overview of Database Schema
+#### Overview of Database Schema
 I have built this database in the format of a STAR schema utilizing 1 'FACT' table and 4 'DIMENSION' tables with the addition of 2 'STAGING' tables. The 2 staging tables are primarily used to process and store the raw data from the S3 buckets before they can be fed into the STAR schema for utilization by the rest of the organization.
 
-##### Overview of ETL Pipeline
+#### Overview of ETL Pipeline
 The ETL pipeline I have designed pulls data from Sparkify's S3 buckets and transforms it from its JSON format to the necessary datatypes for each column in the staging tables. I am inserting the data into "staging" tables first for the added ability to clean and transform data before inserting it into our production tables.
 
 After the data has been transformed and loaded into the staging tables, I will feed them into our production tables.
