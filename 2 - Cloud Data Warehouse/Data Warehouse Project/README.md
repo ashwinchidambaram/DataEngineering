@@ -100,7 +100,7 @@ The datasets that we will be using for Sparkify reside in S3.
         > QUERY:
         >> *SELECT \* FROM staging_events LIMIT 5*
 
-        ![](/Query_Results/staging_events_queryresults.png)
+        ![](2 - Cloud Data Warehouse/Data Warehouse Project/Query_Results/staging_events_queryresults.png)
 
     2. Check [**staging_songs**] table
         > QUERY:
