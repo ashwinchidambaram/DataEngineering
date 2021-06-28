@@ -94,49 +94,32 @@ The datasets that we will be using for Sparkify reside in S3.
     1. Check [**staging_events**] table
         > QUERY:
         >
-        > *SELECT \* FROM staging_events
-        >
-        > LIMIT 5*
-
-    2. Check [**staging_events**] table
-        > QUERY:
-        >
-        > *SELECT \* FROM staging_events
-        >
-        > LIMIT 5*
-
-    3. Check [**staging_events**] table
-        > QUERY:
-        >
         >> *SELECT \* FROM staging_events LIMIT 5*
 
-    4. Check [**staging_events**] table
+    2. Check [**staging_songs**] table
         > QUERY:
         >
-        > *SELECT * FROM staging_events
-        >
-        > LIMIT 5*
+        >> *SELECT \* FROM staging_songs LIMIT 5*
 
-    5. Check [**staging_events**] table
+    3. Check [**songplay**] table
         > QUERY:
-        >
-        > *SELECT \* FROM staging_events
-        >
-        > LIMIT 5*
+        >> *SELECT \* FROM songplay LIMIT 5*
 
-    6. Check [**staging_events**] table
+    4. Check [**users**] table
         > QUERY:
-        >
-        > *SELECT \* FROM staging_events
-        >
-        > LIMIT 5*
+        >> *SELECT \* FROM users LIMIT 5*
 
-    7. Check [**staging_events**] table
+    5. Check [**songs**] table
         > QUERY:
-        >
-        > *SELECT \* FROM staging_events
-        >
-        > LIMIT 5*
+        >> *SELECT \* FROM songs LIMIT 5*
+
+    6. Check [**artist**] table
+        > QUERY:
+        >> *SELECT \* FROM artist LIMIT 5*
+
+    7. Check [**time**] table
+        > QUERY:
+        >> *SELECT \* FROM time LIMIT 5*
 
 
 
