@@ -99,22 +99,45 @@ The datasets that we will be using for Sparkify reside in S3.
         > LIMIT 5*
 
     2. Check [**staging_events**] table
-        > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+        > QUERY:
+        >
+        > *SELECT \* FROM staging_events
+        >
+        > LIMIT 5*
 
     3. Check [**staging_events**] table
-        > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+        > QUERY:
+        >
+        > *SELECT \* FROM staging_events*
+        > *LIMIT 5*
 
     4. Check [**staging_events**] table
-        > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+        > QUERY:
+        >
+        > *SELECT * FROM staging_events
+        >
+        > LIMIT 5*
 
     5. Check [**staging_events**] table
-        > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+        > QUERY:
+        >
+        > *SELECT \* FROM staging_events
+        >
+        > LIMIT 5*
 
     6. Check [**staging_events**] table
-        > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+        > QUERY:
+        >
+        > *SELECT \* FROM staging_events
+        >
+        > LIMIT 5*
 
     7. Check [**staging_events**] table
-        > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+        > QUERY:
+        >
+        > *SELECT \* FROM staging_events
+        >
+        > LIMIT 5*
 
 
 
