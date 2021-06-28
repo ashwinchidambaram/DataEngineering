@@ -49,7 +49,7 @@ The datasets that we will be using for Sparkify reside in S3.
 
 ## Schema for Song Play Analysis
 - Fact Table
-  1. **songplays** -  records in event data associated with song plays i.e. records with page *NextSong*
+  1. **songplay** -  records in event data associated with song plays i.e. records with page *NextSong*
       > *songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent*
 
 - Dimension Tables:
@@ -59,35 +59,29 @@ The datasets that we will be using for Sparkify reside in S3.
   1. **songs** - songs in music database
       > *song_id, title, artist_id, year, duration*
 
-  1. **artists** - artists in music database
+  1. **artist** - artists in music database
       > *artist_id, name, location, latitude, longitude*
 
   1. **time** - timestamps of records in **songplays** broken down into specific units
       > *start_time, hour, day, week, month, year, weekday*
 
 - Staging Tables:
-  1. **staging_events** - users in the app
+  1. **staging_events** - staging table to store events data from Sparkify
       > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
 
-  1. **staging_songs** - users in the app
+  1. **staging_songs** - staging table to store song data from Sparkify
       > *staged_songs_id, num_songs, artist_id, artist_latitude, artist_longitude, artist_location, artist_name, song_id, title, duration, year*
 
-# **Project Process**
-1. Create Table Schemas
-    1.  First, I will be designing the schemas for both the fact and dimension tables according to the specifications provided for this project.
-    2. Next, I will write CREATE statements for each of the tables within the file *sql_queries.py*.
-    3. After that, I will write the logic required to connect to the database within *create_tables.py* and include logic to create all of Sparkify's tables using the queries I wrote in  *sql_queries.py*.
-    4. Following that, I will create the IAM role that has read access to S3 and store the credentials to a secure file to be called within *create_tables.py*.
+# **How to Run Scripts & Overall ETL Flow**
 
-2. Build ETL Pipeline
-    1. First, I will implement the logic to load data from S3 to staging tables within Redshift.
-    2. Following which, I will load data from the staging tables to the analytics tables in Redshift.
+  1. Run [*create_tables.py*] to create the Redshift cluster containing all empty tables. This script will utilize the SQL statements contained within [*sql_queries.py*] to create the fact, dimensions, and staging tables.
 
-# **Project Results**
+  2. Run [*etl.py*] to populate all of our tables within the Redshift cluster. This script will first establish a connection to the S3 buckets containing the JSON log_files and song_files created by Sparkify, then load them into the two staging tables (*staging_events, staging_songs*). After data has been sucessfully loaded, it will extract the necessary columns from both tables and load them to our production tables (*songplay, users, songs, artist, time*).
 
+  3. Now this table can be queried from via the Redshift console within the AWS GUI. For ease of testing, I have included test queries within [*Debug.ipynb*] to ensure that each table has been successfully loaded with the right data. It is also possible to shut the cluster down from there so that we do not waste AWS resources.
 
 # **Project Discussion**
-### 1. Purpose of Database within Context of Sparkify, and their Analytical Goals:
+### 1. Purpose of Database within Context of Sparkify:
 
 The fictional music streaming platform Sparkify is constantly collecting large quantities of data from their users however have no analytical capabilities since the data is simply stored off in JSON files that can not be easily accessed or queried. By creating this database, it allows Sparkify to have easy access to all their data and will allow them to use it for any of their business needs.
 
@@ -95,13 +89,20 @@ As per the client's request we are using AWS to store their raw data in S3 bucke
 
 Their analytic goals are not defined, but using the tables created, they will be easily query the data required to answer any of their business needs.
 
-### 2. Justification of Database Schema Design and ETL Pipeline:
-2. State and justify your database schema design and ETL pipeline.
+### 2. Database Schema Design and ETL Pipeline:
 
+##### Overview of Database Schema
+I have built this database in the format of a STAR schema utilizing 1 'FACT' table and 4 'DIMENSION' tables with the addition of 2 'STAGING' tables. The 2 staging tables are primarily used to process and store the raw data from the S3 buckets before they can be fed into the STAR schema for utilization by the rest of the organization.
 
+##### Overview of ETL Pipeline
+The ETL pipeline I have designed pulls data from Sparkify's S3 buckets and transforms it from its JSON format to the necessary datatypes for each column in the staging tables. I am inserting the data into "staging" tables first for the added ability to clean and transform data before inserting it into our production tables.
+
+After the data has been transformed and loaded into the staging tables, I will feed them into our production tables.
+
+To have a step-by-step breakdown, please refer to the **How to Run Scripts & Overall ETL Flow** section.
 
 ### 3. Example Queries and Results:
-3. Provide example queries and results for song play analysis.
+The following are the results of test queries to ensure that data has been successfully loaded to our 7 tables.
 
     1. Check [**staging_events**] table
         > QUERY:
@@ -144,4 +145,3 @@ Their analytic goals are not defined, but using the tables created, they will be
         >> *SELECT \* FROM time LIMIT 5*
 
         ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/time_queryresults.png)
-        ![]()
