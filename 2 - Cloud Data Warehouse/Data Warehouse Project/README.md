@@ -65,6 +65,13 @@ The datasets that we will be using for Sparkify reside in S3.
   1. **time** - timestamps of records in **songplays** broken down into specific units
       > *start_time, hour, day, week, month, year, weekday*
 
+- Staging Tables:
+  1. **staging_events** - users in the app
+      > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+
+  1. **staging_songs** - users in the app
+      > *staged_songs_id, num_songs, artist_id, artist_latitude, artist_longitude, artist_location, artist_name, song_id, title, duration, year*
+
 # **Project Process**
 1. Create Table Schemas
     1.  First, I will be designing the schemas for both the fact and dimension tables according to the specifications provided for this project.
@@ -76,7 +83,78 @@ The datasets that we will be using for Sparkify reside in S3.
     1. First, I will implement the logic to load data from S3 to staging tables within Redshift.
     2. Following which, I will load data from the staging tables to the analytics tables in Redshift.
 
+# **Project Results**
+
+
 # **Project Discussion**
 1. Discuss the purpose of this database in context of the startup, Sparkify, and their analytical goals.
 2. State and justify your database schema design and ETL pipeline.
 3. Provide example queries and results for song play analysis.
+
+    1. Check []**staging_events**] table
+      > *SELECT \* FROM staging_events
+      LIMIT 5*
+
+    2. Check []**staging_events**] table
+      > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+
+    3. Check []**staging_events**] table
+      > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+
+    4. Check []**staging_events**] table
+      > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+
+    5. Check []**staging_events**] table
+      > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+
+    6. Check []**staging_events**] table
+      > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+
+    7. Check []**staging_events**] table
+      > *staged_events_id, artist, auth, first_name, gender, iteminSession, last_name, length, level, location, method, page, registration, session_id, song, status, ts, userAgent, user_id*
+
+
+
+## OTHER STUFF ##################
+Staging tables:
+- Staging tables are tables containing your business data in some form or other and helps in preparing your business data, usually taken from some business application. They are temporary table containing the business data.
+
+- Staging tables act a reservoir where the data is stored and after further processing it is moved to fact and dimension tables
+
+- Most traditional ETL processes perform their loads using three distinct and serial processes: extraction, followed by transformation, and finally a load to the destination. However, for some large or complex loads, using ETL staging tables can make for better performance and less complexity.
+
+- Staging tables are normally considered volatile tables, meaning that they are emptied and reloaded each time without persisting the results from one execution to the next. Staging tables should be used only for interim results and not for permanent storage.
+
+- This load design pattern has more steps than the traditional ETL process, but it also brings additional flexibility as well. By loading the data first into staging tables, you’ll be able to use the database engine for things that it already does well. For example, joining two sets of data together for validation or lookup purposes can be done in most every ETL tool, but this is the type of task that the database engine does exceptionally well.
+
+====================
+
+- PROJECT: In this project and as part of the specification, we should consider using a staging table on the destination database as a means for processing interim data results.
+
+- PROJECT
+1.) Delete existing data in the staging table(s)
+2.) Extract the data from the source
+3.) Load this source data into the staging table(s)
+4.) Perform relational updates (SQL) to cleanse or apply business rules to the data, repeating this transformation stage as necessary
+5.) Load the transformed data from the staging table(s) into the final destination table(s)
+
+- You may also utilize JOIN statements on both staging tables to insert data into the songplays table, by using staging_events and staging_songs
+
+  FROM staging_events
+  JOIN  staging_songs
+  ON
+
+- So, In sqlqueries.py, you need to:
+
+1. Define the tables for staging tables(2 tables, staging_events_table,staging_songs_table)
+2. Define the start schema tables, songsplay(Fact able) and time, artists, users, songs(dimension tables)
+3. Use copy statement to copy the log_data and song_data files to your redshift staging tables you created above.
+4. Once the data is loaded in the staging tables, use the staging tables to load the data in fact and dimension tables, (project 1 as a reference)
+
+
+
+
+
+https://knowledge.udacity.com/questions/505535
+https://knowledge.udacity.com/questions/148404
+https://knowledge.udacity.com/questions/400479
