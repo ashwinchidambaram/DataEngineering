@@ -10,10 +10,10 @@
   -  Where I will define the SQL statements, which will be imported into the two other files above.
 - *Debug.ipynb*
   -  A Jupyter notebook for debugging scripts. Includes features to:
-    - Delete Redshift cluster & associated IAM roles
-    - Checking Redshift cluster status
-    - Get information on the Data Warehouse
-    - Insert data into production columns from staging tables
+      - Delete Redshift cluster & associated IAM roles
+      - Checking Redshift cluster status
+      - Get information on the Data Warehouse
+      - Insert data into production columns from staging tables
 - *README.md*
   - Where I will discuss the contents of this project, my process to tackle this project, and the decisions I made for the ETL pipeline.
 
