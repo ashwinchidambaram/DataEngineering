@@ -114,7 +114,7 @@ The following are the results of test queries to ensure that data has been succe
         > QUERY:
         >> *SELECT \* FROM staging_events LIMIT 5*
 
-        ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/staging_events_queryresults.png)
+      ![](https://raw.githubusercontent.com/ashwinchidambaram/DataEngineering/main/2%20-%20Cloud%20Data%20Warehouse/Data%20Warehouse%20Project/Query_Results/staging_events_queryresults.png)
 
     2. Check [**staging_songs**] table
         > QUERY:
